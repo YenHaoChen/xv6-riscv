@@ -47,3 +47,7 @@ You will need a RISC-V "newlib" tool chain from
 https://github.com/riscv/riscv-gnu-toolchain, and qemu compiled for
 riscv64-softmmu.  Once they are installed, and in your shell
 search path, you can run "make qemu".
+
+RUNNING XV6 IN SPIKE
+
+You can run "spike -m128 kernel/kernel" if Spike in shell search path.
