@@ -11,6 +11,7 @@
 #include "sleeplock.h"
 #include "fs.h"
 #include "buf.h"
+#include "ramdisk.h"
 
 void
 ramdiskinit(void)
@@ -31,7 +32,7 @@ ramdiskrw(struct buf *b, int write)
     panic("ramdiskrw: blockno too big");
 
   uint64 diskaddr = b->blockno * BSIZE;
-  char *addr = (char *)RAMDISK + diskaddr;
+  char *addr = (char *)fs_img + diskaddr;
 
   if(write){
     // write
